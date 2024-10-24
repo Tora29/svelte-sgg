@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="./_app/immutable/entry/start.BAoqwgu3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.NV6N1TLo.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/runtime.DOvr4Zuz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.CCczH1KX.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.DUik6IUm.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/render.DK8jSJI-.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.DBbZFaiD.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.ZUpuhF06.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.DVavo4kC.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.BR9XkRGv.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/lifecycle.COTW7Vq6.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><nav><a href="./">ホーム</a> <a href="./hogehoge">ホゲホゲ</a></nav> <!----><!----><h1>Svelte Kit SSG の挙動確認サンプル</h1> <h2>・レンダリング後はBuild 時に生成した静的ファイルには触らずにDOM を直接編集する</h2> <h3>F12を押下して開発者ツールを表示し、「Elements（要素）」タブに移動してください。<br> ボタンを押下した際に&lt;pre> タグの中のJSONデータが表示・非表示される際、ツリーが動的に更新されることを確認してください。<br> DOMが更新されると、その部分が自動的にハイライトされるので、変更箇所がすぐに分かります。</h3> <button>JSONデータを表示</button> <!--[!--><!--]--> <h2>・レンダリング後の動的コンテンツについて</h2> <h3>クライアントサイドでまだ更新されていません。</h3> <h3>Svelte kit では、レンダリング後に実行する処理をonMount関数内に記述します。<br> プロジェクトルートに生成された.bulid ファイルからindex.html を開き<br> 上記文字列が「クライアントサイドでまだ更新されていません」なっていることを確認してください。</h3> <h3><pre><code>
+    
+    // 実際のコード
+    // レンダリング前のデータ
+    let dynamicContent = 'クライアントサイドでまだ更新されていません';
+
+    // レンダリング後のデータ
+    onMount(() => {
+      dynamicContent = 'クライアントサイドで更新されました！';
+    });
+  
+  </code></pre></h3><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1xftxn6 = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						assets: "/svelte-ssg"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.BAoqwgu3.js"),
+						import("./_app/immutable/entry/app.DUik6IUm.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
