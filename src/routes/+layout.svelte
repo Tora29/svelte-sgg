@@ -1,6 +1,10 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <nav>
-	<a href="https://tora29.github.io/svelte-ssg/">ホーム</a>
-	<a href="https://tora29.github.io/svelte-ssg/hogehoge">ホゲホゲ</a>
+	<a href="{base}/">ホーム</a>
+	<a href="{base}//hogehoge">ホゲホゲ</a>
 </nav>
 
 <slot />

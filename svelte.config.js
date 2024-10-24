@@ -8,8 +8,8 @@ const config = {
 	preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      pages: 'build/svelte-ssg',
-      assets: 'build/svelte-ssg',
+      pages: 'build',
+      assets: 'build',
       fallback: undefined,
       precompress: false,
       strict: true

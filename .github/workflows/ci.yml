@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v3
+
+      - name: Node.js のセットアップ
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: 依存関係のインストール
+        run: npm install
+
+      - name: SvelteKit のビルド
+        run: npm run build
+
+      - name: GitHub Pages 用へのデプロイ
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_API_TOKEN }}
+          publish_dir: ./build
