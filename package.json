@@ -1,6 +1,6 @@
 {
 	"name": "ver-svelte-ssg",
-	"homepage": "https://Tora29.github.io/svelte-ssg/",
+	"homepage": "https://tora29.github.io/svelte-ssg/",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
